@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 
 // Connect to database
 $servername = "localhost";
-$username = "root";
+$username = "myadmin";
 $password = "";
 $dbname = "crud";
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -17,3 +17,5 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->
+}
+?>
