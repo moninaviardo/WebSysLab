@@ -1,53 +1,67 @@
 <?php
-// Start session
+
 session_start();
 
-// Connect to database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "crud";
-$conn = new mysqli($servername, $username, $password, $dbname);
+// Connect to the database
+$dbhost = 'localhost';
+$dbuser = 'myuser';
+$dbpass = 'mypassword';
+$dbname = 'mydatabase';
 
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
+// Check for errors
+if (!$conn) {
+    die('Could not connect to the database: ' . mysqli_connect_error());
 }
 
-// Validate user login credentials
-if (isset($_POST['login'])) {
-  $username = $_POST['username'];
-  $password = $_POST['password'];
+// Process login form submission
+if (isset($_POST['submit'])) {
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-  $sql = "SELECT * FROM users WHERE username='$username'";
-  $result = $conn->query($sql);
+    // Verify username and password in database
+    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    $result = mysqli_query($conn, $sql);
 
-  if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    if (password_verify($password, $row['password'])) {
-      $_SESSION['user_id'] = $row['id'];
-      header("Location: dashboard.php");
-    } else {
-      echo "Invalid password";
+    // Check for errors
+    if (!$result) {
+        die('Error retrieving user information: ' . mysqli_error($conn));
     }
-  } else {
-    echo "Invalid username";
-  }
+
+    // If user exists, set session variable and redirect to home page
+    if (mysqli_num_rows($result) == 1) {
+        $row = mysqli_fetch_assoc($result);
+        $_SESSION['user_id'] = $row['id'];
+        header('Location: home.php');
+        exit();
+    } else {
+        $error = 'Invalid username or password';
+    }
 }
 
-<!DOCTYPE html>
+// Display login form
+?>
 <html>
 <head>
-  <title>User Login</title>
+    <title>Login</title>
 </head>
 <body>
-  <h2>User Login</h2>
-  <form action="login.php" method="post">
-    <label>Username:</label>
-    <input type="text" name="username" required><br>
-    <label>Password:</label>
-    <input type="password" name="password" required><br>
-    <button type="submit" name="login">Login</button>
-  </form>
+    <h1>Login</h1>
+    <?php if (isset($error)) { echo "<p>$error</p>"; } ?>
+    <form method="post" action="login.php">
+        <label>Username:</label>
+        <input type="text" name="username" required><br>
+        <label>Password:</label>
+        <input type="password" name="password" required><br>
+        <input type="submit" name="submit" value="Login">
+    </form>
 </body>
 </html>
+
+<?php
+
+// Close the database connection
+mysqli_close($conn);
+
+?>
