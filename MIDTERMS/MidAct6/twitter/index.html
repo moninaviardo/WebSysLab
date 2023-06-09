@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twitter Monina Viardo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous"/>
+  </head>
+  <body>
+    <!-- navigation starts -->
+    <div class="navigation">
+      <i class="fab fa-twitter"></i>
+      <div class="navigationOption active">
+        <span class="material-icons"> home </span>
+        <h2>Home</h2>
+      </div>
+
+      <div class="navigationOption">
+        <span class="material-icons"> tag </span>
+        <h2>Explore</h2>
+      </div>
+
+      <div class="navigationOption">
+        <span class="material-icons"> notifications_none </span>
+        <h2>Notifications</h2>
+      </div>
+
+      <div class="navigationOption">
+        <span class="material-icons"> mail_outline </span>
+        <h2>Messages</h2>
+      </div>
+
+      <div class="navigationOption">
+        <span class="material-icons"> bookmark_border </span>
+        <h2>Bookmarks</h2>
+      </div>
+
+      <div class="navigationOption">
+        <span class="material-icons"> perm_identity </span>
+        <h2>Profile</h2>
+      </div>
+
+      <div class="navigationOption">
+        <span class="material-icons"> more_horiz </span>
+        <h2>More</h2>
+      </div>
+      <button class="navigation__tweet">Tweet</button>
+    </div>
+    <!-- navigation ends -->
+
+    <!-- feed starts -->
+    <div class="feed">
+      <div class="feed__header">
+        <h2>Home</h2>
+      </div>
+
+      <!-- tweetbox starts -->
+      <div class="tweetBox">
+        <form>
+          <div class="tweetbox__input">
+            <img
+              src="https://pbs.twimg.com/profile_images/1622558750086426624/UovUx3kZ_400x400.jpg"
+              alt=""
+            />
+            <input type="text" placeholder="What's happening?" />
+          </div>
+          <button class="tweetBox__tweetButton">Tweet</button>
+        </form>
+      </div>
+      <!-- tweetbox ends -->
+
+      <!-- post starts -->
+      <div class="post">
+        <div class="post__avatar">
+          <img
+            src="https://pbs.twimg.com/profile_images/1622558750086426624/UovUx3kZ_400x400.jpg"
+            alt=""
+          />
+        </div>
+
+        <div class="post__body">
+          <div class="post__header">
+            <div class="post__headerText">
+              <h3>
+                Monina Viardo
+                <span class="post__headerSpecial"
+                  ><span class="material-icons post__badge"> verified </span>@moninaviardo</span
+                >
+              </h3>
+            </div>
+            <div class="post__headerDescription">
+              <p>pretty.</p>
+            </div>
+          </div>
+          <img
+            src="https://pbs.twimg.com/media/FqjV8PJWIAI72vz?format=jpg&name=medium"
+            alt=""
+          />
+          <div class="post__footer">
+            <span class="material-icons"> repeat </span><h3>&nbsp 2</h3>
+            <span class="material-icons"> favorite_border </span><h3>&nbsp 14</h3>
+            <span class="material-icons"> publish </span>
+          </div>
+        </div>
+      </div>
+      <!-- post ends -->
+
+      <!-- post starts -->
+      <div class="post">
+        <div class="post__avatar">
+          <img
+            src="https://pbs.twimg.com/profile_images/1537892661629431808/gtBJRIFI_400x400.jpg"
+            alt=""
+          />
+        </div>
+
+        <div class="post__body">
+          <div class="post__header">
+            <div class="post__headerText">
+              <h3>
+                Jester | emote artist
+                <span class="post__headerSpecial"
+                  ><span class="material-icons post__badge"> verified </span>@jokingjester__</span
+                >
+              </h3>
+            </div>
+            <div class="post__headerDescription">
+              <p>advance congrats to one of my closest friends 
+                <a href="https://twitter.com/Banyamoo">@banyamoo</a> for her debut!! 
+                <p>pls support her streams c:</p>
+                <p>&nbsp;</p>
+                <p>also no more twitter crop yay</p>
+                <p>[<a href="https://twitter.com/hashtag/artph?src=hashtag_click">#artph</a> <a href="https://twitter.com/hashtag/artshare?src=hashtag_click">#artshare</a> <a href="https://twitter.com/hashtag/ArtistOnTwitter?src=hashtag_click">#artistsontwitter</a> <a href="https://twitter.com/hashtag/ArtistsOnTwitter?src=hashtag_click">#ArtistOnTwitter</a> <a href="https://twitter.com/hashtag/ArtistOfSEA?src=hashtag_click">#ArtistofSEA</a> <a href="https://twitter.com/hashtag/arttwt?src=hashtag_click">#arttwt</a>]</p>
+            </div>
+          </div>
+          <img
+            src="https://pbs.twimg.com/media/E0zVwrcUcAEQhjv?format=jpg&name=medium"
+            alt=""
+          />
+          <div class="post__footer">
+            <span class="material-icons"> repeat </span><h3>&nbsp 7</h3>
+            <span class="material-icons"> favorite_border </span><h3>&nbsp 42</h3>
+            <span class="material-icons"> publish </span>
+          </div>
+        </div>
+      </div>
+      <!-- post ends -->
+    </div>
+    <!-- feed ends -->
+
+    <!-- widgets starts -->
+    <div class="widgets">
+      <div class="widgets__input">
+        <span class="material-icons widgets__searchIcon"> search </span>
+        <input type="text" placeholder="Search Twitter" />
+      </div>
+
+      <div class="widgets__widgetContainer">
+        <h2>What's happening?</h2>
+        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">do it for him! <a href="https://t.co/edkyl4tmgh">pic.twitter.com/edkyl4tmgh</a></p>&mdash; VALORANT (@VALORANTde) <a href="https://twitter.com/VALORANTde/status/1633069494833651713?ref_src=twsrc%5Etfw">March 7, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Omen Cat Dance Spray | <a href="https://twitter.com/hashtag/VALORANT?src=hash&amp;ref_src=twsrc%5Etfw">#VALORANT</a> <a href="https://t.co/zXNQvkHw8H">pic.twitter.com/zXNQvkHw8H</a></p>&mdash; Mike | Valorant Leaks &amp; News (@ValorLeaks) <a href="https://twitter.com/ValorLeaks/status/1632815818877665280?ref_src=twsrc%5Etfw">March 6, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
+    <!-- widgets ends -->
+  </body>
+</html>
